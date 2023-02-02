@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ChocolateFactoryCrew</string>
+
+    //Texts
+    <string name="cell_number_default">0</string>
+    <string name="cell_name_default">No disponible.</string>
+    <string name="cell_mail_default">No disponible.</string>
+    <string name="cell_profession_default">No disponible.</string>
+    <string name="worker_list_loading">Cargando lista de Oompa Loompas...</string>
+
+</resources>
