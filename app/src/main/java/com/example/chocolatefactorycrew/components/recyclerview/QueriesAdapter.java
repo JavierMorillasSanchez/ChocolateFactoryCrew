@@ -9,10 +9,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.chocolatefactorycrew.R;
 import com.example.chocolatefactorycrew.components.listitemcell.QueryViewHolder;
-import com.example.chocolatefactorycrew.data.allcrew.allcrewdata.AllCrewDataIn;
-import com.example.chocolatefactorycrew.data.workerdata.workercalldata.WorkerCallDataOut;
 import com.example.chocolatefactorycrew.data.workerdata.WorkerData;
 
 import java.util.ArrayList;
@@ -20,14 +19,12 @@ import java.util.ArrayList;
 public class QueriesAdapter extends RecyclerView.Adapter<QueryViewHolder> implements IQueriesAdapter {
 
     private Context context;
-    private ArrayList<WorkerData> queryModel = new ArrayList<>();
-    AllCrewDataIn allCrewDataIn;
+    private ArrayList<WorkerData> workerDataArrayList = new ArrayList<>();
 
-    public QueriesAdapter(Context context, ArrayList<WorkerData> queryModel){
+    public QueriesAdapter(Context context, ArrayList<WorkerData> workerDataArrayList){
         this.context = context;
-        this.queryModel = queryModel;
+        this.workerDataArrayList = workerDataArrayList;
     }
-
 
     @NonNull
     @Override
@@ -38,51 +35,36 @@ public class QueriesAdapter extends RecyclerView.Adapter<QueryViewHolder> implem
 
     @Override
     public void onBindViewHolder(@NonNull QueryViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        /*
 
-        QueryModel query = queryModel.get(position);
+        WorkerData workerData = workerDataArrayList.get(position);
 
-        holder.txtLatitude.setText(query.getLatitude());
-        holder.txtLongitude.setText(query.getLongitude());
-        holder.txtAvgTemp.setText(query.getAvg_temp());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                allCrewDataIn = new GpsCoordinatesIn(
-                        BuildConfig.WEATHER_API_KEY,
-                        query.getLatitude(),
-                        query.getLongitude(),
-                        new SimpleDateFormat("yyyy-MM-dd").format(new Date()),
-                        new SimpleDateFormat("yyyy-MM-dd").format(new Date())
-                );
-
-                navigateToWorkerDetail(allCrewDataIn);
-            }
-        });
-
-         */
+        holder.txtId.setText(String.valueOf(position+1));
+        holder.txtMail.setText(workerData.getEmail());
+        holder.txtName.setText(workerData.getFullName());
+        holder.txtProfession.setText(workerData.getProfession());
+        this.loadImages(workerData.getImage(),holder);
 
     }
-
-
 
     @Override
     public int getItemCount() {
-        return queryModel.size();
+        return workerDataArrayList.size();
+    }
+
+    public void updateData(ArrayList<WorkerData> workerDataArrayList) {
+        if (workerDataArrayList.size() > 0) {
+            notifyDataSetChanged();
+        }
     }
 
     @Override
-    public void navigateToWorkerDetail(WorkerCallDataOut workerDataOut){
-        /*
-        Intent navigateToWorkerDetail = new Intent(context, WeatherDetailActivity.class);
-        navigateToWorkerDetail.putExtra("workerData",workerDataOut);
-        navigateToWorkerDetail.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        this.context.startActivity(navigateToWorkerDetail);
-
-         */
+    public void loadImages(String url, QueryViewHolder imgHolder) {
+        Glide.with(context)
+                .load(url)
+                .error(R.drawable.oompa_loompa_logo)
+                .into(imgHolder.imgWorker);
     }
+
 
 }
 

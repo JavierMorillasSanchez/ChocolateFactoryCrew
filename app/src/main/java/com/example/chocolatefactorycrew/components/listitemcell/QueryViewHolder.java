@@ -11,17 +11,18 @@ import com.example.chocolatefactorycrew.R;
 
 public class QueryViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView txtLatitude, txtLongitude, txtAvgTemp;
-    public ImageView userImg;
+    public TextView txtId, txtName, txtProfession, txtMail;
+    public ImageView imgWorker;
 
     public QueryViewHolder(@NonNull View itemView) {
         super(itemView);
-/*
-        txtLatitude = itemView.findViewById(R.id.txt_latitude_cell);
-        txtLongitude = itemView.findViewById(R.id.txt_longitude_cell);
-        txtAvgTemp = itemView.findViewById(R.id.txt_avg_temp_cell);
 
- */
+        txtId = itemView.findViewById(R.id.txt_id_cell);
+        txtName = itemView.findViewById(R.id.txt_name_cell);
+        txtProfession = itemView.findViewById(R.id.txt_profession_cell);
+        txtMail = itemView.findViewById(R.id.txt_mail_cell);
+
+        imgWorker = itemView.findViewById(R.id.img_worker_cell);
 
     }
 

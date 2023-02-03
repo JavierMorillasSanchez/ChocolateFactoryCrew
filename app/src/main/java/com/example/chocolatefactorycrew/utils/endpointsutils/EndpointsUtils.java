@@ -12,7 +12,8 @@ public class EndpointsUtils {
         return allCrewUrl;
     }
 
-    public String getWorkerDataUrl() {
+    public String getWorkerDataUrl(int workerDataId) {
+        this.setWorkerDataId(workerDataId);
         return workerDataUrl;
     }
 
