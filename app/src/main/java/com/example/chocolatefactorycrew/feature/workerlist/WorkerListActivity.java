@@ -59,8 +59,6 @@ public class WorkerListActivity extends AppCompatActivity implements IWorkerList
 
     }
 
-    public ErrorUtils errorUtils = new ErrorUtils();
-
     @Override
     public void callAllCrew() {
 
@@ -80,7 +78,7 @@ public class WorkerListActivity extends AppCompatActivity implements IWorkerList
 
             @Override
             public void onFailure(Call<AllCrewData> call, Throwable t) {
-                errorUtils.genericErroToast(getApplicationContext());
+                ErrorUtils.genericErrorToast(getApplicationContext());
             }
         });
     }

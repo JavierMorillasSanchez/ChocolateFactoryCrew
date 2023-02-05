@@ -2,6 +2,7 @@ package com.example.chocolatefactorycrew.components.recyclerview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.chocolatefactorycrew.R;
 import com.example.chocolatefactorycrew.components.listitemcell.QueryViewHolder;
 import com.example.chocolatefactorycrew.data.workerdata.WorkerData;
+import com.example.chocolatefactorycrew.feature.workerdetail.WorkerDetailActivity;
 
 import java.util.ArrayList;
 
@@ -44,17 +46,18 @@ public class QueriesAdapter extends RecyclerView.Adapter<QueryViewHolder> implem
         holder.txtProfession.setText(workerData.getProfession());
         this.loadImages(workerData.getImage(),holder);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToWorkerDetail(workerData);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
         return workerDataArrayList.size();
-    }
-
-    public void updateData(ArrayList<WorkerData> workerDataArrayList) {
-        if (workerDataArrayList.size() > 0) {
-            notifyDataSetChanged();
-        }
     }
 
     @Override
@@ -65,6 +68,13 @@ public class QueriesAdapter extends RecyclerView.Adapter<QueryViewHolder> implem
                 .into(imgHolder.imgWorker);
     }
 
+    @Override
+    public void navigateToWorkerDetail(WorkerData workerData){
+        Intent navigateToUserDetail = new Intent(context, WorkerDetailActivity.class);
+        navigateToUserDetail.putExtra("userData",workerData);
+        navigateToUserDetail.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(navigateToUserDetail);
+    }
 
 }
 

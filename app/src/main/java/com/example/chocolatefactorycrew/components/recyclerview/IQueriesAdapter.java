@@ -7,6 +7,6 @@ import com.example.chocolatefactorycrew.data.workerdata.workercalldata.WorkerCal
 import java.util.ArrayList;
 
 public interface IQueriesAdapter {
-    void updateData(ArrayList<WorkerData> userList);
     void loadImages(String url, QueryViewHolder imgHolder);
+    void navigateToWorkerDetail(WorkerData workerData);
 }

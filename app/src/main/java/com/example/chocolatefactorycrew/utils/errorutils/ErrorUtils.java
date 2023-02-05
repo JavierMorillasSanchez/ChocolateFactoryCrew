@@ -5,10 +5,10 @@ import android.widget.Toast;
 
 import com.example.chocolatefactorycrew.R;
 
-public class ErrorUtils {
+public interface ErrorUtils {
 
-    public void genericErroToast(Context context){
-        Toast.makeText(context, R.string.generic_error_text, Toast.LENGTH_SHORT).show();
+    static void genericErrorToast(Context context){
+        Toast.makeText(context, R.string.generic_error_text, Toast.LENGTH_LONG).show();
     }
 
 }

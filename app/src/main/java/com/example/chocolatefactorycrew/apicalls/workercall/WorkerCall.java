@@ -26,11 +26,9 @@ public class WorkerCall implements IWorkerCall {
 
     public static Retrofit getRetrofitInstance(int workerId){
 
-        String workerUrl = new EndpointsUtils().getWorkerDataUrl(workerId);
-
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl(workerUrl)
+                    .baseUrl(EndpointsUtils.allCrewUrl+workerId+"/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
