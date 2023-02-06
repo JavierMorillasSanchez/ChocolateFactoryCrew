@@ -1,15 +1,14 @@
 package com.example.chocolatefactorycrew.feature.workerlist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.chocolatefactorycrew.R;
 import com.example.chocolatefactorycrew.apicalls.allcrewcall.AllCrewCall;
@@ -17,7 +16,6 @@ import com.example.chocolatefactorycrew.apicalls.apiservices.IAllCrewService;
 import com.example.chocolatefactorycrew.components.recyclerview.QueriesAdapter;
 import com.example.chocolatefactorycrew.data.allcrew.AllCrewData;
 import com.example.chocolatefactorycrew.data.workerdata.WorkerData;
-import com.example.chocolatefactorycrew.feature.workerlist.workerlistviewmodel.WorkerListViewModel;
 import com.example.chocolatefactorycrew.utils.errorutils.ErrorUtils;
 
 import java.util.ArrayList;
@@ -34,7 +32,6 @@ public class WorkerListActivity extends AppCompatActivity implements IWorkerList
 
     public ArrayList workerDataList = new ArrayList();
     public QueriesAdapter workerAdapter;
-    WorkerListViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +51,6 @@ public class WorkerListActivity extends AppCompatActivity implements IWorkerList
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rvWorkerList.setLayoutManager(linearLayoutManager);
-
-        this.viewModel = new WorkerListViewModel();
 
     }
 

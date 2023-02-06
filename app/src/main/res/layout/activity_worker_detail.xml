@@ -1,9 +1,440 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.workerdetail.WorkerDetailActivity">
+    android:fillViewport="true"
+    android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_worker_image_detail"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/oompa_loompa_logo"
+            android:scaleType="fitCenter"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_first_name_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_first_name"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_first_name_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_last_name_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_last_name"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_last_name_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_profession_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_profession"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_profession_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_mail_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_mail"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_mail_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_gender_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_gender"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_gender_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_description_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_description"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_description_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_country_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_country"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_country_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_height_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_height"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_height_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_food_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_food"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_food_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_color_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_color"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_color_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_quota_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_quota"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_quota_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_song_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_song"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_song_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/txt_random_string_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_row_random_string"
+                android:textSize="15sp"
+                android:layout_weight="0"
+                android:textAlignment="textStart"/>
+
+            <TextView
+                android:id="@+id/txt_random_string_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cell_default"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:textAlignment="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

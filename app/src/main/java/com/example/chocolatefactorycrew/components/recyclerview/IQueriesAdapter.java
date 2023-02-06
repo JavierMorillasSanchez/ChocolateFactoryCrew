@@ -8,5 +8,5 @@ import java.util.ArrayList;
 
 public interface IQueriesAdapter {
     void loadImages(String url, QueryViewHolder imgHolder);
-    void navigateToWorkerDetail(WorkerData workerData);
+    void navigateToWorkerDetail(String workerId);
 }

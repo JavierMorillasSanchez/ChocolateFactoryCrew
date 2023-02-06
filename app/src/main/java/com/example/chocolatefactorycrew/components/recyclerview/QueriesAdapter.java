@@ -49,7 +49,7 @@ public class QueriesAdapter extends RecyclerView.Adapter<QueryViewHolder> implem
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToWorkerDetail(workerData);
+                navigateToWorkerDetail(workerData.getId());
             }
         });
 
@@ -69,9 +69,9 @@ public class QueriesAdapter extends RecyclerView.Adapter<QueryViewHolder> implem
     }
 
     @Override
-    public void navigateToWorkerDetail(WorkerData workerData){
+    public void navigateToWorkerDetail(String workerId){
         Intent navigateToUserDetail = new Intent(context, WorkerDetailActivity.class);
-        navigateToUserDetail.putExtra("userData",workerData);
+        navigateToUserDetail.putExtra("workerId",workerId);
         navigateToUserDetail.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(navigateToUserDetail);
     }

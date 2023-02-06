@@ -4,6 +4,20 @@
     //Texts
     <string name="worker_list_loading">Cargando lista de Oompa Loompas...</string>
     <string name="generic_error_text">Ha ocurrido un error con tu petición.</string>
+    <string name="detail_row_first_name">Nombre:</string>
+    <string name="detail_row_last_name">Apellido:</string>
+    <string name="detail_row_profession">Puesto:</string>
+    <string name="detail_row_mail">Email:</string>
+    <string name="detail_row_gender">Género:</string>
+    <string name="detail_row_description">Descripción:</string>
+    <string name="detail_row_country">Pais:</string>
+    <string name="detail_row_height">Altura:</string>
+    <string name="detail_row_age">Edad:</string>
+    <string name="detail_row_food">Comida:</string>
+    <string name="detail_row_color">Color:</string>
+    <string name="detail_row_quota">Cita:</string>
+    <string name="detail_row_song">Canción:</string>
+    <string name="detail_row_random_string">Cadena aleatoria:</string>
 
     //Default texts
     <string name="cell_number_default">0</string>

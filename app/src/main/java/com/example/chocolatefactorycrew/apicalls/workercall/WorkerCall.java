@@ -24,11 +24,11 @@ public class WorkerCall implements IWorkerCall {
 
     private static Retrofit retrofit;
 
-    public static Retrofit getRetrofitInstance(int workerId){
+    public static Retrofit getRetrofitInstance(){
 
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl(EndpointsUtils.allCrewUrl+workerId+"/")
+                    .baseUrl(EndpointsUtils.allCrewUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
